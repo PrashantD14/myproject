@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+</head>
+<body>
+
+    <h2>Simple Weather App</h2>
+
+    <form method="POST">
+        <input type="text" name="location" placeholder="Enter city (Mumbai, Delhi, Bangalore)">
+        <button type="submit">Search</button>
+    </form>
+
+    <h3>Weather for {{ location }}</h3>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Time(24 Hour)</th>
+            <th>Temperature (°C)</th>
+            <th>Cloud Cover</th>
+        </tr>
+
+        {% for item in weather %}
+        <tr>
+            <td>{{ item.timepoint }}</td>
+            <td>{{ item.temp2m }}</td>
+            <td>{{ item.cloudcover }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
